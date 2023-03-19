@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scoped-functions"
+description = "Utility to run code at function exit"
+version = "1.0.0"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Intel Corporation"},
+    {name = "CVAT.ai Corporation"},
+    {name = "Roman Donchenko"},
+    {name = "Maxim Zhiltsov", email="zhiltsov.max35@gmail.com"},
+]
+maintainers = [
+    {name = "Maxim Zhiltsov", email = "zhiltsov.max35@gmail.com"}
+]
+keywords = [
+    "context managers", "RAII", "rollback", "cleanup", "function exit",
+    "object lifetime", "utility", "library"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Operating System :: OS Independent",
+    'License :: OSI Approved :: MIT License',
+    "Programming Language :: Python",
+]
+dependencies = [
+    "attrs>=21.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "isort",
+]
+
+[project.urls]
+repository = "https://github.com/zhiltsov-max/scoped"
+
+[tool.isort]
+profile = "black"
+forced_separate = ["tests"]
+line_length = 100
+
+[tool.black]
+line-length = 100
+target-version = ['py38']
